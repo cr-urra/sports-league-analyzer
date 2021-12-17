@@ -1,14 +1,12 @@
 import json
 
-
 print("¿Qué desea analizar?")
 print()
-tipo = input("Introduzca F para fútbol o B para Básquetbol: ")
 
+tipo = input("Introduzca F para fútbol o B para Básquetbol: ")
 tipo = tipo.lower()
 
 while True:
-
 
     if tipo == "f":
 
@@ -34,7 +32,6 @@ while True:
 
         print(nombres.index(equipo))
         break
-
 
     elif tipo == "b":
         nombres = []
