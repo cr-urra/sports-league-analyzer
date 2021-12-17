@@ -1,0 +1,41 @@
+{
+    "teams":[
+
+        {"name":"UCONCE",
+        "points" : 19        
+        },
+        {"name":"UCATOLICA",
+        "points" : 17        
+        },
+        {"name":"MPUENTEALTO",
+        "points" : 16        
+        },
+        {"name":"CLOSLEONES",
+        "points" : 15        
+        },
+        {"name":"TEMUCOUFRO",
+        "points" : 12        
+        },
+        {"name":"ESPANOLTALCA",
+        "points" : 11        
+        },
+        {"name":"PTOVARAS",
+        "points" : 19        
+        },
+        {"name":"LASANIMAS",
+        "points": 16
+        },
+        {"name":"CDANCUD",
+        "points" : 16        
+        },
+        {"name":"VALDIVIA",
+        "points": 14
+        }, 
+        {"name":"PTOMONTT",
+            "points": 13
+        },
+        {"name":"CDCASTRO",
+            "points": 11
+        }      
+    ]
+}

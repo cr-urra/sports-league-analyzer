@@ -1,0 +1,35 @@
+{
+    "teams":[
+
+        {"name":"BRASIL",
+        "points" : 35        
+        },
+        {"name":"ARGENTINA",
+        "points" : 29        
+        },
+        {"name":"ECUADOR",
+        "points" : 23        
+        },
+        {"name":"PARAGUAY",
+        "points" : 13        
+        },
+        {"name":"URUGUAY",
+        "points" : 16        
+        },
+        {"name":"CHILE",
+        "points" : 16        
+        },
+        {"name":"COLOMBIA",
+        "points" : 17        
+        },
+        {"name":"VENEZUELA",
+        "points": 7
+        },
+        {"name":"PERU",
+        "points" : 17        
+        },
+        {"name":"BOLIVIA",
+        "points": 15
+        }       
+    ]
+}
