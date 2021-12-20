@@ -3,6 +3,17 @@ import networkx as nx
 
 # Funcion para crear grafo de futbol
 def create_f_graph(nombres, puntos=None, team_z=None):
+    # Primero se debe eliminar del conjunto el grupo escogido
+    # Y guardar su puntaje, y tambien los partidos por jugar
+    z_points = 0
+    matches_left = len(nombres) - 1
+    for x in range(0, len(nombres)):
+        if(nombres[x] == team_z):
+            z_points = puntos.pop(x)
+    
+    nombres.remove(team_z)
+    
+    # Se genera el grafo
     G = nx.DiGraph()  
     third_layer_exist = False
     
@@ -34,8 +45,7 @@ def create_f_graph(nombres, puntos=None, team_z=None):
             G.add_weighted_edges_from( [(two_win_node, nombres[x], 3) ] )
             
         # Cuarta capa: Condicion de victoria
-        #win_condition_capacity = puntos[z_team] + partidos_restantes*3 - puntos[i]
-        win_condition_capacity = 7
+        win_condition_capacity = z_points + matches_left*3 - puntos[i]
         G.add_weighted_edges_from( [(nombres[i], 't', win_condition_capacity) ] )
 
     return G
@@ -72,6 +82,7 @@ def main():
             equipo = equipo.upper()
 
             print(nombres.index(equipo))
+
             break
 
         elif tipo == "b":
