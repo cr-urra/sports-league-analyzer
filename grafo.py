@@ -1,6 +1,17 @@
 import json
 import networkx as nx
 
+# Algoritmo de flujo maximo con multiplicadores
+def flow_multiplier_ssp(G):
+    # Definicion de variables
+    num_edges = len(G.edges)
+    potentials = [0] * num_edges
+    actual_flows = [0] * num_edges
+    residual_cost = [0] * num_edges
+    cost = [0] * num_edges
+    E = {e: {0} for e in G.edges}       # Set de balances positivos
+    D = {e: {0} for e in G.edges}       # Set de balances negativos
+
 # Funcion para crear grafo de basketball
 def create_b_graph(nombres, puntos=None, team_z=None):
     # Primero se debe eliminar del conjunto el grupo escogido
