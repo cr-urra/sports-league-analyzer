@@ -6,13 +6,13 @@ def create_b_graph(nombres, puntos=None, team_z=None):
     # Primero se debe eliminar del conjunto el grupo escogido
     # Y guardar su puntaje, y tambien los partidos por jugar
     z_points = 0
-    matches_left = len(nombres) - 1
     for x in range(0, len(nombres)):
         if(nombres[x] == team_z):
             z_points = puntos.pop(x)
             break
     
     nombres.remove(team_z)
+    matches_left = len(nombres) - 1
 
     # Se genera el grafo
     G = nx.DiGraph()
@@ -35,7 +35,7 @@ def create_b_graph(nombres, puntos=None, team_z=None):
             G.add_weighted_edges_from( [(match_node_name, nombres[x], 1000) ] )
             
         # Cuarta capa: Condicion de victoria
-        win_condition_capacity = z_points + matches_left - puntos[i]
+        win_condition_capacity = z_points + matches_left + 1 - puntos[i]
         G.add_weighted_edges_from( [(nombres[i], 't', win_condition_capacity) ] )
 
     return G
