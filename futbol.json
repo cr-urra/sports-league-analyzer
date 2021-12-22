@@ -3,43 +3,43 @@
 
         {"name":"BRASIL",
         "points" : 35,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"ARGENTINA",
         "points" : 29,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"ECUADOR",
         "points" : 23,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"PARAGUAY",
         "points" : 13,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"URUGUAY",
         "points" : 16,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"CHILE",
         "points" : 16,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"COLOMBIA",
         "points" : 17,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"VENEZUELA",
         "points": 7,
-        "matches" : 9
+        "rmatches" : 9
         },
         {"name":"PERU",
         "points" : 17,
-        "matches" : 9        
+        "rmatches" : 9        
         },
         {"name":"BOLIVIA",
         "points": 15,
-        "matches" : 9
+        "rmatches" : 9
         }       
     ]
 }
