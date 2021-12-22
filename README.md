@@ -2,7 +2,7 @@
 
 Cristobal Urra - Diego Saavedra - Benjamin Rojas - Cristian Maira <hr><br>
 
-<h2>Modelo para calcular posibilidad de victoria de un equipo en competencias deportivas.</h2><br>
+<h2>Algoritmo para análisis de victorias en competencias deportivas</h2><br>
 
 ## 1 - Instalacion de dependencias
 
