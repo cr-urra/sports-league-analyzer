@@ -135,17 +135,26 @@ def main():
                 nombres.append((team['name']))
 
             for team in data['teams']:
-                puntos.append((team['points']))  
+                puntos.append((team['points']))
+            
+            for team in data['teams']:
+                fechas.append((team['rmatches'])) 
 
             print(nombres)
             print("####################")
             print(puntos)    
+            print("####################")
+            print(fechas)    
             print("####################")
 
             equipo = input("INGRESE EQUIPO A EVALUAR: ")
             equipo = equipo.upper()
 
             print(nombres.index(equipo))
+            if(puntos[nombres.index(equipo)] + fechas[nombres.index(equipo)]*3 < puntos[0]):
+            	print("No se puede salir primero")
+            else:
+            	print("Si se puede salir primero")
             break
 
         else:
