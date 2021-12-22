@@ -1,6 +1,45 @@
 import json
 import networkx as nx
 
+# Funcion para crear grafo de basketball
+def create_b_graph(nombres, puntos=None, team_z=None):
+    # Primero se debe eliminar del conjunto el grupo escogido
+    # Y guardar su puntaje, y tambien los partidos por jugar
+    z_points = 0
+    matches_left = len(nombres) - 1
+    for x in range(0, len(nombres)):
+        if(nombres[x] == team_z):
+            z_points = puntos.pop(x)
+            break
+    
+    nombres.remove(team_z)
+
+    # Se genera el grafo
+    G = nx.DiGraph()
+    second_layer_exist = False
+
+    for i in range(0, len(nombres)):
+        for x in range(i+1, len(nombres)):
+            # Primera capa: Nodos de partidos
+            match_node_name = nombres[i][0:3] + '\n' + nombres[x][0:3]
+            G.add_weighted_edges_from( [('s', match_node_name, matches_left)] )
+            
+            # Segunda capa: Posibles resultados
+            if (second_layer_exist == False):
+                for team in nombres:
+                    G.add_node(team)
+                
+                second_layer_exist = True
+            
+            G.add_weighted_edges_from( [(match_node_name, nombres[i], 1000) ] )
+            G.add_weighted_edges_from( [(match_node_name, nombres[x], 1000) ] )
+            
+        # Cuarta capa: Condicion de victoria
+        win_condition_capacity = z_points + matches_left - puntos[i]
+        G.add_weighted_edges_from( [(nombres[i], 't', win_condition_capacity) ] )
+
+    return G
+
 # Funcion para crear grafo de futbol
 def create_f_graph(nombres, puntos=None, team_z=None):
     # Primero se debe eliminar del conjunto el grupo escogido
