@@ -4,6 +4,7 @@ from collections import defaultdict
 from networkx.drawing.nx_agraph import graphviz_layout
 import matplotlib.pyplot as plt
 
+# Funcion para mostrar el grafo mediante matplotlib
 def show_graph(G):
     nx.nx_agraph.write_dot(G,'test.dot')
     layout = graphviz_layout(G, prog='dot')
@@ -147,9 +148,9 @@ def create_f_graph(nombres, puntos=None, team_z=None):
             tie_node = match_node_name + '\n' + 'empate'
             two_win_node = match_node_name + '\n' + nombres[x] + ' Gana'
             
-            G.add_weighted_edges_from( [(match_node_name, one_win_node, 3) ] )
-            G.add_weighted_edges_from( [(match_node_name, tie_node, 2)] )
-            G.add_weighted_edges_from( [(match_node_name, two_win_node, 3) ] )
+            G.add_weighted_edges_from( [(match_node_name, one_win_node, 1) ] )
+            G.add_weighted_edges_from( [(match_node_name, tie_node, 1)] )
+            G.add_weighted_edges_from( [(match_node_name, two_win_node, 1) ] )
             
             # Tercera capa: Reparticion de puntos
             if (third_layer_exist == False):

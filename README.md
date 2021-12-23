@@ -10,7 +10,7 @@ En una maquina con Ubuntu (deseablemente >= 18.04), python3, e idealmente en un 
 
 - Libreria para modelamiento de grafos
     ```sh
-    pip install networkx
+    pip3 install networkx
     ```
 - (Opcional) Libreria para visualizacion
     ```sh
@@ -18,5 +18,5 @@ En una maquina con Ubuntu (deseablemente >= 18.04), python3, e idealmente en un 
     ```
 
     ```sh
-    pip install matplotlib graphviz
+    pip3 install matplotlib graphviz pygraphviz
     ```
