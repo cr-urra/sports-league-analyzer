@@ -1,6 +1,17 @@
 import json
 import networkx as nx
 from collections import defaultdict
+from networkx.drawing.nx_agraph import graphviz_layout
+import matplotlib.pyplot as plt
+
+def show_graph(G):
+    nx.nx_agraph.write_dot(G,'test.dot')
+    layout = graphviz_layout(G, prog='dot')
+    labels = nx.get_edge_attributes(G, "weight")
+    nx.draw_networkx_edge_labels(G,layout,edge_labels=labels)
+    nx.draw(G, layout, with_labels=True, arrows=True, font_size=9, node_size=1000)
+    plt.rcParams['figure.figsize'] = [10, 10]
+    plt.show()
 
 # Algoritmo de flujo maximo con multiplicadores
 def flow_multiplier_ssp(G):
@@ -190,6 +201,9 @@ def main():
             equipo = equipo.upper()
 
             print(nombres.index(equipo))
+            
+            Gf = create_f_graph(nombres, puntos, equipo)
+            show_graph(Gf)
 
             break
 
