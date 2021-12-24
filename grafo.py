@@ -190,6 +190,7 @@ def main():
 
             nombres = []
             puntos = []
+            fechas = []
 
             with open('futbol.json') as file:
                 data = json.load(file)
@@ -198,7 +199,10 @@ def main():
                 nombres.append((team['name']))
 
             for team in data['teams']:
-                puntos.append((team['points']))  
+                puntos.append((team['points']))
+                
+            for team in data['teams']:
+                fechas.append((team['rmatches']))
 
             print(nombres)
             print("####################")
@@ -208,7 +212,13 @@ def main():
             equipo = input("INGRESE EQUIPO A EVALUAR: ")
             equipo = equipo.upper()
 
-            print(nombres.index(equipo))
+            #print(nombres.index(equipo))
+            
+            if(puntos[nombres.index(equipo)] + fechas[nombres.index(equipo)]*3 < puntos[0]):
+            	print("No se puede salir primero")
+            else:
+            	print("Si se puede salir primero")
+            	#llamar funcion ssp aqui
             
             Gf = create_f_graph(nombres, puntos, equipo)
             flow_value, flow_dict = nx.maximum_flow(Gf, "s", "t", capacity='weight')
@@ -230,6 +240,9 @@ def main():
 
             for team in data['teams']:
                 puntos.append((team['points']))
+            
+            for team in data['teams']:
+                fechas.append((team['rmatches']))
 
             print(nombres)
             print("####################")
@@ -240,6 +253,12 @@ def main():
 
             equipo = input("INGRESE EQUIPO A EVALUAR: ")
             equipo = equipo.upper()
+            
+            if(puntos[nombres.index(equipo)] + fechas[nombres.index(equipo)]*2 < puntos[0]):
+            	print("No se puede salir primero")
+            else:
+            	print("Si se puede salir primero")
+            	#llamar ford fulkerson aca
 
             Gb = create_b_graph(nombres, puntos, equipo)
             analyze_b_graph(Gb)
