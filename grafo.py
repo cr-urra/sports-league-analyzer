@@ -3,6 +3,8 @@ import networkx as nx
 from collections import defaultdict
 from networkx.drawing.nx_agraph import graphviz_layout
 import matplotlib.pyplot as plt
+from networkx.algorithms.flow import maximum_flow
+from networkx.algorithms.flow import edmonds_karp
 
 # Funcion para mostrar el grafo mediante matplotlib
 def show_graph(G):
@@ -24,6 +26,11 @@ def flow_multiplier_ssp(G):
     cost = [0] * num_edges
     E = {e: {0} for e in G.edges}       # Set de balances positivos
     D = {e: {0} for e in G.edges}       # Set de balances negativos
+
+def analyze_b_graph(G):
+    R = edmonds_karp(G, "s", "t", capacity='weight')
+    flow_value = nx.maximum_flow_value(G, "s", "t", capacity='weight')
+    print(flow_value == R.graph["flow_value"])
 
 # Funcion para crear grafo de basketball
 def create_b_graph(nombres, puntos=None, team_z=None):
@@ -204,13 +211,16 @@ def main():
             print(nombres.index(equipo))
             
             Gf = create_f_graph(nombres, puntos, equipo)
-            show_graph(Gf)
+            flow_value, flow_dict = nx.maximum_flow(Gf, "s", "t", capacity='weight')
+            print(flow_value)
+            #show_graph(Gf)
 
             break
 
         elif tipo == "b":
             nombres = []
             puntos = []
+            fechas = []
 
             with open('basquet.json') as file:
                 data = json.load(file)
@@ -220,9 +230,6 @@ def main():
 
             for team in data['teams']:
                 puntos.append((team['points']))
-            
-            for team in data['teams']:
-                fechas.append((team['rmatches'])) 
 
             print(nombres)
             print("####################")
@@ -234,11 +241,10 @@ def main():
             equipo = input("INGRESE EQUIPO A EVALUAR: ")
             equipo = equipo.upper()
 
-            print(nombres.index(equipo))
-            if(puntos[nombres.index(equipo)] + fechas[nombres.index(equipo)]*3 < puntos[0]):
-            	print("No se puede salir primero")
-            else:
-            	print("Si se puede salir primero")
+            Gb = create_b_graph(nombres, puntos, equipo)
+            analyze_b_graph(Gb)
+            #show_graph(Gb)
+
             break
 
         else:
