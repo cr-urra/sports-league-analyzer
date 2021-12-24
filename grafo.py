@@ -241,8 +241,8 @@ def main():
             for team in data['teams']:
                 puntos.append((team['points']))
             
-            for team in data['teams']:
-                fechas.append((team['rmatches']))
+            #for team in data['teams']:
+             #   fechas.append((team['rmatches']))
 
             print(nombres)
             print("####################")
