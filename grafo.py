@@ -230,7 +230,7 @@ def main():
         elif tipo == "b":
             nombres = []
             puntos = []
-            fechas = []
+            #fechas = []
 
             with open('basquet.json') as file:
                 data = json.load(file)
@@ -248,8 +248,8 @@ def main():
             print("####################")
             print(puntos)    
             print("####################")
-            print(fechas)    
-            print("####################")
+            #print(fechas)    
+            #print("####################")
 
             equipo = input("INGRESE EQUIPO A EVALUAR: ")
             equipo = equipo.upper()
@@ -257,11 +257,13 @@ def main():
             if(puntos[nombres.index(equipo)] + fechas[nombres.index(equipo)]*2 < puntos[0]):
             	print("No se puede salir primero")
             else:
-            	print("Si se puede salir primero")
-            	#llamar ford fulkerson aca
+                Gb = create_b_graph(nombres, puntos, equipo)
+             
+                if(analyze_b_graph(Gb) == True):
+            	    print("Si se puede salir primero")
+            	    #llamar ford fulkerson aca
 
-            Gb = create_b_graph(nombres, puntos, equipo)
-            analyze_b_graph(Gb)
+            
             #show_graph(Gb)
 
             break
