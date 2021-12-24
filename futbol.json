@@ -24,22 +24,6 @@
         {"name":"CHILE",
         "points" : 16,
         "rmatches" : 9        
-        },
-        {"name":"COLOMBIA",
-        "points" : 17,
-        "rmatches" : 9        
-        },
-        {"name":"VENEZUELA",
-        "points": 7,
-        "rmatches" : 9
-        },
-        {"name":"PERU",
-        "points" : 17,
-        "rmatches" : 9        
-        },
-        {"name":"BOLIVIA",
-        "points": 15,
-        "rmatches" : 9
-        }       
+        }    
     ]
 }

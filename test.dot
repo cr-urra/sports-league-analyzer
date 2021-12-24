@@ -1,0 +1,67 @@
+strict digraph "" {
+	s -> "UCA
+MPU"	[weight=4];
+	s -> "UCA
+CLO"	[weight=4];
+	s -> "UCA
+TEM"	[weight=4];
+	s -> "UCA
+ESP"	[weight=4];
+	s -> "MPU
+CLO"	[weight=4];
+	s -> "MPU
+TEM"	[weight=4];
+	s -> "MPU
+ESP"	[weight=4];
+	s -> "CLO
+TEM"	[weight=4];
+	s -> "CLO
+ESP"	[weight=4];
+	s -> "TEM
+ESP"	[weight=4];
+	"UCA
+MPU" -> UCATOLICA	[weight=1000];
+	"UCA
+MPU" -> MPUENTEALTO	[weight=1000];
+	UCATOLICA -> t	[weight=7];
+	MPUENTEALTO -> t	[weight=8];
+	CLOSLEONES -> t	[weight=9];
+	TEMUCOUFRO -> t	[weight=12];
+	ESPANOLTALCA -> t	[weight=13];
+	"UCA
+CLO" -> UCATOLICA	[weight=1000];
+	"UCA
+CLO" -> CLOSLEONES	[weight=1000];
+	"UCA
+TEM" -> UCATOLICA	[weight=1000];
+	"UCA
+TEM" -> TEMUCOUFRO	[weight=1000];
+	"UCA
+ESP" -> UCATOLICA	[weight=1000];
+	"UCA
+ESP" -> ESPANOLTALCA	[weight=1000];
+	"MPU
+CLO" -> MPUENTEALTO	[weight=1000];
+	"MPU
+CLO" -> CLOSLEONES	[weight=1000];
+	"MPU
+TEM" -> MPUENTEALTO	[weight=1000];
+	"MPU
+TEM" -> TEMUCOUFRO	[weight=1000];
+	"MPU
+ESP" -> MPUENTEALTO	[weight=1000];
+	"MPU
+ESP" -> ESPANOLTALCA	[weight=1000];
+	"CLO
+TEM" -> CLOSLEONES	[weight=1000];
+	"CLO
+TEM" -> TEMUCOUFRO	[weight=1000];
+	"CLO
+ESP" -> CLOSLEONES	[weight=1000];
+	"CLO
+ESP" -> ESPANOLTALCA	[weight=1000];
+	"TEM
+ESP" -> TEMUCOUFRO	[weight=1000];
+	"TEM
+ESP" -> ESPANOLTALCA	[weight=1000];
+}

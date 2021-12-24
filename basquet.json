@@ -18,24 +18,6 @@
         },
         {"name":"ESPANOLTALCA",
         "points" : 11        
-        },
-        {"name":"PTOVARAS",
-        "points" : 19        
-        },
-        {"name":"LASANIMAS",
-        "points": 16
-        },
-        {"name":"CDANCUD",
-        "points" : 16        
-        },
-        {"name":"VALDIVIA",
-        "points": 14
-        }, 
-        {"name":"PTOMONTT",
-            "points": 13
-        },
-        {"name":"CDCASTRO",
-            "points": 11
-        }      
+        }   
     ]
 }

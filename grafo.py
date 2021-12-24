@@ -254,7 +254,7 @@ def main():
             equipo = input("INGRESE EQUIPO A EVALUAR: ")
             equipo = equipo.upper()
             
-            if(puntos[nombres.index(equipo)] + 5*2 < puntos[0]):
+            if(puntos[nombres.index(equipo)] + len(nombres)*2 < puntos[0]):
             	print("No se puede salir primero")
             else:
                 Gb = create_b_graph(nombres, puntos, equipo)
